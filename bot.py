@@ -25,7 +25,7 @@ async def start(client, message):
 أنا بوت أقوم بتحويل الصورة الى pdf
 وايظا اقوم بضغط ملف pdf اذا كان حجمة كبير 
 فقط ارسلي pdf
-المطور 🧑‍💻:@ooonn2""",reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
+                    """,reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("دعم 💊" ,url="https://t.me/ooonn2") ],
