@@ -21,12 +21,11 @@ LIST = {}
 
 @app.on_message(filters.command(['start']))
 async def start(client, message):
- await message.reply_text(text =f"""مرحبا 😇 {message.from_user.first_name } 
-
+ await message.reply_text(text =f"""مرحبا 😇 {message.from_user.first_name } بك في بوت pdf
 أنا بوت أقوم بتحويل الصورة الى pdf
 وايظا اقوم بضغط ملف pdf اذا كان حجمة كبير 
 فقط ارسلي pdf
-المطور 🧑‍💻: @ooonn2""",reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
+المطور 🧑‍💻:@ooonn2""",reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton("دعم 💊" ,url="https://t.me/ooonn2") ],
