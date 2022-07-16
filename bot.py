@@ -21,15 +21,15 @@ LIST = {}
 
 @app.on_message(filters.command(['start']))
 async def start(client, message):
- await message.reply_text(text =f"""Hello {message.from_user.first_name }image to pdf bot 
+ await message.reply_text(text =f"""مرحبا 😇 {message.from_user.first_name } 
 
-i can convert image to pdf
+أنا بوت أقوم بتحويل الصورة الى pdf
 
-This bot created by @mrlokaman""",reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
+المطور 🧑‍💻: @ooonn2""",reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("Support 🇮🇳" ,url="https://t.me/lntechnical") ],
-                 [InlineKeyboardButton("Subscribe 🧐", url="https://youtube.com/c/LNtechnical") ]       ]        ) )
+                    InlineKeyboardButton("دعم 💊" ,url="https://t.me/ooonn2") ],
+                 [InlineKeyboardButton("قناة البوت 🔊", url="https://t.me/enghussainh") ]       ]        ) )
 
 
 
@@ -43,13 +43,13 @@ async def pdf(client,message):
   
  
  file_id = str(message.photo.file_id)
- ms = await message.reply_text("Converting to PDF ......")
+ ms = await message.reply_text("تحويل الى pdf📙......")
  file = await client.download_media(file_id)
  
  image = Image.open(file)
  img = image.convert('RGB')
  LIST[message.from_user.id].append(img)
- await ms.edit(f"{len(LIST[message.from_user.id])} image   Successful created PDF if you want add more image Send me One by one\n\n **if done click here 👉 /convert** ")
+ await ms.edit(f"{len(LIST[message.from_user.id])} اذا تريد بعد أرسل صور للبوت 🖼\n\n **إذا  كملت إضغط  هذا أمر  👉 /convert** ")
  
 
 @app.on_message(filters.command(['convert']))
@@ -59,13 +59,13 @@ async def done(client,message):
  if isinstance(images, list):
   del LIST[message.from_user.id]
  if not images:
-  await message.reply_text( "No image !!")
+  await message.reply_text( "!!لا يوجد  صورة")
   return
 
  path = f"{message.from_user.id}" + ".pdf"
  images[0].save(path, save_all = True, append_images = images[1:])
  
- await client.send_document(message.from_user.id, open(path, "rb"), caption = "Here your pdf !!")
+ await client.send_document(message.from_user.id, open(path, "rb"), caption = "هذا ملف جاهز 😇")
  os.remove(path)
  
  
