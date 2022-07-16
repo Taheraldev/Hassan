@@ -19,17 +19,17 @@ app = Client(
 
 LIST = {}
 
-@app.on_message(filters.command(['start']))
+@app.on_message(filters.command(['/start']))
 async def start(client, message):
- await message.reply_text(text =f"""مرحبا 😇 {message.from_user.first_name } بك في بوت pdf
-أنا بوت أقوم بتحويل الصورة الى pdf
-وايظا اقوم بضغط ملف pdf اذا كان حجمة كبير 
-فقط ارسلي pdf
-                    """,reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
+ await message.reply_text(text =f"""مرحبا {message.from_user.first_name }بك في بوت pdf
+
+يمكنني تحويل الصور الى pdf
+وايظا ضغط  ملف pdf اذا حجمة كبير 
+تم تطوير هذا البوت بواسطة @ooonn2""",reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("دعم 💊" ,url="https://t.me/ooonn2") ],
-                 [InlineKeyboardButton("قناة البوت 🔊", url="https://t.me/enghussainh") ]       ]        ) )
+                    InlineKeyboardButton("مطور 👨‍💻" ,url="https://t.me/ooonn2") ],
+                 [InlineKeyboardButton("🔊قناة🔊", url="https://t.me/enghussainh") ]       ]        ) )
 
 
 
