@@ -24,7 +24,8 @@ async def start(client, message):
  await message.reply_text(text =f"""مرحبا 😇 {message.from_user.first_name } 
 
 أنا بوت أقوم بتحويل الصورة الى pdf
-
+وايظا اقوم بضغط ملف pdf اذا كان حجمة كبير 
+فقط ارسلي pdf
 المطور 🧑‍💻: @ooonn2""",reply_to_message_id = message.message_id ,  reply_markup=InlineKeyboardMarkup(
             [
                 [
